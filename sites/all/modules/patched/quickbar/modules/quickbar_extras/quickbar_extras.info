@@ -1,0 +1,11 @@
+name = Quickbar: Extras
+description = Provides additional functionality to Quickbar.
+package = Quickbar
+dependencies[] = quickbar
+core = 7.x
+; Information added by drupal.org packaging script on 2012-01-25
+version = "7.x-2.0-beta1+28-dev"
+core = "7.x"
+project = "quickbar"
+datestamp = "1327452155"
+

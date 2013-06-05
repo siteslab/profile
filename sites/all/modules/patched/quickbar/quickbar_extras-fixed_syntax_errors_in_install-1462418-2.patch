@@ -1,0 +1,12 @@
+diff --git a/modules/quickbar_extras/quickbar_extras.install b/modules/quickbar_extras/quickbar_extras.install
+index 8636fe8..24a7205 100644
+--- a/modules/quickbar_extras/quickbar_extras.install
++++ b/modules/quickbar_extras/quickbar_extras.install
+@@ -4,6 +4,7 @@ function quickbar_extras_update_7201() {
+   $ret = array();
+   // Undo Serialized Variables.
+   $query = db_select('variable');
++  $query->fields('variable');
+   $query->condition('name', 'quickbar_extras_settings_%', 'LIKE');
+   $result = $query->execute();
+   

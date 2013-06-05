@@ -1,0 +1,36 @@
+/* custom information added by JWare for the cwcon featured slideshow*/
+
+#views-slideshow-form-wrapper .form-item.dependent-options {
+  padding-left: 5px;
+}
+
+#views-slideshow-form-wrapper .vs-dependent {
+  padding-left: 30px;
+}
+
+.featuredtitle {
+	font-weight: bold;
+	
+	float: left;
+	clear: both;
+	padding: 10px 10px 10px 0;
+	font-size: 35px;
+}
+
+.featuredimage {
+	float: left;
+	clear:  left;
+	border: 2px solid #0b5b8f;
+}
+
+.featuredroom {
+	float: left;
+	clear:left;
+	padding: 13px;
+}
+
+.featuredabstract {
+	float: left;
+    width: 50%;
+	padding-left: 3%;
+}

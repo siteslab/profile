@@ -1,0 +1,41 @@
+From e30e9dfb6239302abb029aa05a52b918e58370b0 Mon Sep 17 00:00:00 2001
+From: Scott Deeter <scottd@knowclassic.com>
+Date: Thu, 29 Nov 2012 09:09:39 -0500
+Subject: [PATCH] Applied fix to resolve error message
+
+* Fix made by d.o user farguas; see http://drupal.org/node/1090982#comment-4705450 for details
+---
+ fancy_login.module | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/fancy_login.module b/fancy_login.module
+index 71ce3bb..0a03ceb 100644
+--- a/fancy_login.module
++++ b/fancy_login.module
+@@ -101,12 +101,13 @@ function fancy_login_page_alter(&$page)
+ 		);
+ 		$links = (count($items)) ? drupal_render($links) : '';
+ 		$image_path = $base_url . '/' . $path . '/images/ajax-loader.gif';
+-		$markup = '<div id="fancy_login_dim_screen"></div>' .
++    $userLogin = drupal_get_form('user_login');
++    $markup = '<div id="fancy_login_dim_screen"></div>' .
+ 			'<div id="fancy_login_login_box">' .
+ 			'<div id="fancy_login_form_contents">' .
+ 			'<a href="#" id="fancy_login_close_button">X</a>' .
+-			drupal_render(drupal_get_form('user_login')) .
+-			$links .
++      drupal_render($userLogin) .
++      $links .
+ 			'</div>' .
+ 			'<div id="fancy_login_ajax_loader"><img src="' . $image_path . '" alt="' . t('Loading') . '" /></div>' .
+ 			'</div>';
+@@ -194,4 +195,4 @@ function fancy_login_theme()
+ 			'template' => 'ssl-icon',
+ 		),
+ 	);
+-}
+\ No newline at end of file
++}
+-- 
+1.8.0
+

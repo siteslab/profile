@@ -1,0 +1,48 @@
+/* @override http://siteslab.org/cwcon/2013stage/sites/all/modules/views_slideshow/views_slideshow.css?mkbrte */
+
+/* @override http://siteslab.org/cwcon/2013stage/sites/all/modules/views_slideshow/views_slideshow.css?mka8fb */
+
+/* @override http://siteslab.org/cwcon/2013stage/sites/all/modules/views_slideshow/views_slideshow.css?mka8fb */
+
+/* custom information added by JWare for the cwcon featured slideshow*/
+
+#views-slideshow-form-wrapper .form-item.dependent-options {
+  padding-left: 5px;
+}
+
+#views-slideshow-form-wrapper .vs-dependent {
+  padding-left: 30px;
+}
+
+div#featuredlink a, hover, active, visited {
+	color: #e2d7b3;
+}
+
+.featuredtitle {
+	font-weight: bold;
+	color: #e2d7b3;
+	float: left;
+	clear: both;
+	padding: 10px 10px 10px 0;
+	font-size: 35px;
+}
+
+.featuredimage {
+	float: left;
+	clear:  left;
+	margin-left: 15px;
+	/* border: 2px solid #454d2f; green*/
+	border: 2px solid #733b1f;  /* brown orange */
+}
+
+.featuredroom {
+	float: left;
+	clear:left;
+	padding: 13px;
+}
+
+.featuredabstract {
+	float: left;
+    width: 50%;
+	padding-left: 3%;
+}

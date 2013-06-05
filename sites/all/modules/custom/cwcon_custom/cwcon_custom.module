@@ -1,0 +1,135 @@
+<?php
+/**
+ * @file
+ * Code for the custom CWCON functionality
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function cwcon_custom_field_formatter_info() {
+  return array(
+    'display_name' => array(
+      'label' => t('Display Name (first and last)'),
+      'description' => t('Display the user\'s full name'),
+      'field types' => array('entityreference', 'node_reference', 'user_reference'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function cwcon_custom_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = t('Turns a username into a first and last name');
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function cwcon_custom_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  if ($display['type'] == 'display_name'  && !empty($entity->field_all_presenters[LANGUAGE_NONE])) {
+    foreach ($entity->field_all_presenters[LANGUAGE_NONE] as $user) {
+      $presenter = user_load($user['uid']);
+      $presenters[] = l(theme('display_name', (array)$presenter), 'user/' . $user['uid']);
+    }
+    $element[0]['#markup'] = implode($presenters, ', ');
+  }
+
+  return $element;
+}
+
+/**
+ * Returns string for a display name (FirstName LastName) given a presenter.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - properties of the presenter user object
+ *
+ * @ingroup themeable
+ */
+function theme_display_name($variables) {
+  $display_name_array = array();
+  foreach (array('field_first_name', 'field_last_name') as $field) {
+    if (!empty($variables[$field])) {
+      $display_name_array[] = $variables[$field][LANGUAGE_NONE][0]['value'];
+    }
+  }
+
+  $display_name = implode(" ", $display_name_array);
+
+  return $display_name;
+}
+
+/*
+ * Implements hook_theme()
+ */
+function cwcon_custom_theme(){
+  return array(
+    'display_name' => array(
+      'variables' => array('presenter' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function cwcon_custom_preprocess_node(&$vars) {
+
+  // Hide the link to add session materials to a session to anyone who is not a presenter
+  if ($vars['type'] == 'session' && !empty($vars['field_all_presenters']) && !user_access('administer nodes')) {
+    global $user;
+    $presenter_is_viewing = FALSE;
+    foreach ($vars['node']->field_all_presenters[LANGUAGE_NONE] as $presenter) {
+      if ( $user->uid == $presenter['uid']) {
+        $presenter_is_viewing = TRUE;
+        break;
+      }
+    }
+
+    if (!$presenter_is_viewing) {
+      unset($vars['content']['links']['nodereference_url']['#links']['presentation_materials_field_related_session']);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function cwcon_custom_preprocess_page(&$vars) {
+
+  // If it's not a session page with an eva twitter view, move on
+  if (!isset($vars['node']) || $vars['node']->type != 'session' || !isset($vars['page']['content']['system_main']['nodes'])) {
+    return;
+  }
+  // Move attached eva twitter view to sidebar
+  $node_key = element_children($vars['page']['content']['system_main']['nodes']);
+  $nid = current($node_key);
+
+  // If there's no EVA twitter view, let's not go through the trouble of switching
+  if (!isset($vars['page']['content']['system_main']['nodes'][$nid]['twitter_attach_entity_view_1'])) {
+    return;
+  }
+
+  $twitter_eva_view = $vars['page']['content']['system_main']['nodes'][$nid]['twitter_attach_entity_view_1'];
+
+  if (isset($vars['page']['sidebar_first']['community_tags_0'])) {
+    $twitter_eva_view['#weight'] =  $vars['page']['sidebar_first']['community_tags_0']['#weight'] + .02;
+  }
+  else {
+    // Possible alternative would be to prepend it to array and not invoke re-sort
+    $twitter_eva_view['#weight'] = 0;
+  }
+
+  $vars['page']['sidebar_first'][] = $twitter_eva_view;
+  // Invoke a re-sorting after adding an element
+  $vars['page']['sidebar_first']['#sorted'] = FALSE;
+
+  unset($vars['page']['content']['system_main']['nodes'][$nid]['twitter_attach_entity_view_1']);
+}

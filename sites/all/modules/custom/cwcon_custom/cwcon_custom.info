@@ -1,0 +1,4 @@
+name = Custom code for CWCON  
+description = Custom hooks and snippets that need to be in a module.
+core = 7.x
+package = CWCON
