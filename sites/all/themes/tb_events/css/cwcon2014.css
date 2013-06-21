@@ -1,6 +1,10 @@
-/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2013.css?mnxgq8 */
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2014.css?mnxgq8 */
 
-/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2013.css?mnxdoe */
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2014.css?mnxf15 */
+
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2014.css?mnxdoe */
+
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2013.css?mntlhw */
 
 /* @override http://www.siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/cwcon2013.css?mncsx3 */
 
@@ -9,12 +13,23 @@
 
 /* Online conference slideshow on front page */
 
+/*  2014 colors 
+	yellow is #a19734
+	brown is #7e6b42
+	light green  #5c7c35
+	medium green is #3a624c
+	dark green is #314c47
+
+*/
+
+
 
 
 .view-online-conference-slideshow .featuredabstract {
 	color: #3b2702;
 	width: 90%;
-	}
+	background-color: #3a624c;
+}
 	
 .featuredimage {
 	float: right;
@@ -280,29 +295,30 @@ margin-bottom: 10px;
 div.view.view-twitter-attach a {
 	color: #a74c1d;
 }
-/* turn the main wrapper brown 
+/* turn the main wrapper green */
 
 #main-wrapper > .container {
 	padding: 10px 0 10px 10px;
-  background-color: #3b2703;
+  background-color: #2e4424;
 }
-*/
 
 /* wrap the menu bar in cwcon 2013 color and do the same to the page title*/
 
 #menu-bar-wrapper .region-menu-bar {
-  background: #e3d7b3;
   width: 100%;
- 
+  background-color: #447537;
+
 }
-/*
+
 #page-title {
 	
-background-color: #dbc79e; 
+background-color: #5c7c35; 
 font-size: 24px;
+
 margin: .5em 0 1em;
 padding: 10px 15px;
-}*/
+color: #ffffff;
+}
 /* superfish menu 1 test. leaving this out for now but the superfish upgrade will break our theming of the superfish menu
 
 #superfish-1 a {

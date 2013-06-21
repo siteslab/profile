@@ -1,3 +1,5 @@
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/forms.css?mnxf15 */
+
 /* @override http://siteslab.org/cwcon/2013stage/sites/all/themes/tb_events/css/forms.css?mkbrte */
 
 /* @override http://siteslab.org/cwcon/2013stage/sites/all/themes/tb_events/css/forms.css?mka8fb */
@@ -115,8 +117,11 @@ a.button:focus {
 span.button {
 }
 
+/*
+ background: url(../images/button-corner-smallorange.png) no-repeat 0 0;
+*/
 span.button input.form-submit {
-  background: url(../images/button-corner-smallorange.png) no-repeat 0 0;
+  background: url(../images/button-corner-smallgreen.png) no-repeat 0 0;
   border: none;
   color: #FFF;
   cursor: pointer;
