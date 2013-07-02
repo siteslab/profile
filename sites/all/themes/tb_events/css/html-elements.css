@@ -1,3 +1,5 @@
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/html-elements.css?mnxdoe */
+
 /* @override http://siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/html-elements.css?ml1xki */
 
 /* @override http://siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/html-elements.css?mkndgp */
@@ -40,16 +42,17 @@ p img {
 
 body {
 	/* background-color: #e3d7b3;  */
-	    background: linear-gradient(top , #FFFFFF 2%, #d9c499 89%);
-	    background: -moz-linear-gradient(top , #FFFFFF 2%, #d9c499 89%);
-	    background: -webkit-linear-gradient(top , #FFFFFF 2%, #d9c499 89%);
-	        }
+	    background: -moz-linear-gradient(top, #f0e396 12%, #6e933b 89%) #f0e396;
+	    background: -webkit-linear-gradient(top, #f0e396 12%, #6e933b 89%) #f0e396;
+	}
 /*	background-image: -webkit-gradient(linear, left bottom, left top, from(#d9c499), to(white)); 
 } */
 
 .sidebar {
 	background-color: #ccc;
 }
+
+
 
 body {
   /*background-color: #e3d7b3; 
@@ -60,6 +63,7 @@ body {
 .profile {
 	margin-top: 0;
 	background-color: #dbc79d;
+	
 	padding: 10px;
 }
 
