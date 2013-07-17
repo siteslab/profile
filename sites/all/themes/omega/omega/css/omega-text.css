@@ -1,34 +1,9 @@
-/* @override http://siteslab.org/omegatest/themes/omega/omega/css/omega-text.css?maeiik */
-
-/* @override http://siteslab.org/omegatest/themes/omega/omega/css/omega-text.css?maeiik */
-
-#region-menu a:link, a:visited {
-	color: #fff;
-	text-decoration: none;
-	font:  Arial, Verdana, sans-serif;
-}
-
-#region-menu a:hover {
-	
-
-  color: #fff;
-  text-decoration: none;
-  background-color: #4F3228;
-}
-
-#region-menu a:active {
-  text-decoration: none;
-  color: #000;
-  background-color: #4F3228;
-}
-
-
 body {
-  font: 13px/1.5 Arial, Helvetica, Verdana, sans-serif;
+  font: 13px/1.5 Verdana, Helvetica, Arial, sans-serif;
 }
 
 a:link, a:visited {
-  color: #fff;
+  color: #0062A0;
   text-decoration: underline;
 }
 

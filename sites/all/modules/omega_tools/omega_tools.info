@@ -9,9 +9,9 @@ files[] = omega_tools.module
 files[] = includes/omega_tools.admin.inc
 files[] = includes/omega_tools.drush.inc
 files[] = includes/omega_tools.wizard.inc
-; Information added by drupal.org packaging script on 2012-02-18
-version = "7.x-3.0-rc4+0-dev"
+; Information added by drupal.org packaging script on 2012-02-17
+version = "7.x-3.0-rc4"
 core = "7.x"
 project = "omega_tools"
-datestamp = "1329524677"
+datestamp = "1329502543"
 

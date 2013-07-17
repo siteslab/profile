@@ -9,7 +9,7 @@ screenshot = 'screenshot.png'
 ; Stylesheets
 
 stylesheets[all][] = 'css/html-elements.css'
-stylesheets[all][] = 'css/cwcon2013.css'
+stylesheets[all][] = 'css/cwcon2014.css'
 stylesheets[all][] = 'css/superfish/events.css'
 stylesheets[all][] = 'css/quicktabs/events.css'
 stylesheets[all][] = 'css/forms.css'

@@ -1,3 +1,5 @@
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/page.css?mnxf15 */
+
 /* @override http://siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/page.css?mm8hv2 */
 
 /* @override http://siteslab.org/cwcon/2013stage/sites/all/themes/tb_events/css/page.css?mkebo1 */
@@ -211,13 +213,13 @@ body.not-front #main-content .region-content {
 
 #sidebar-first-wrapper {
   /*background: url(../images/bg-corner.png) no-repeat right top; */
-  background: url(../images/bg-corner_orangeweb.png) no-repeat right top;
+  background: url(../images/bg-corner_green2014.png) no-repeat right top;
   margin-top: -10px;
 }
 
 .not-logged-in #sidebar-first-wrapper {
  /*background: url(../images/bg-corner.png) no-repeat right top; */
-  background: url(../images/bg-corner_orangeweb.png) no-repeat right top;
+  background: url(../images/bg-corner_green2014.png) no-repeat right top;
 }
 
 #sidebar-first-wrapper .grid-inner {

@@ -1,15 +1,31 @@
-/* @override http://siteslab.org/cwcon/2013stage/sites/all/themes/tb_events/css/navigation.css?mka8fb */
+/* @override http://siteslab.org/cwcon/2014/sites/all/themes/tb_events/css/navigation.css?mnxmtr */
 
-/* @override http://localhost:8888/cwlocal/themes/tb_events/css/navigation.css?mh1101 */
+
+/*  2014 colors 
+	yellow is #a19734
+	brown is #7e6b42
+	light green  #5c7c35
+	medium green is #3a624c
+	dark green is #314c47
+
+*/
+
+/* style the menu tabs to be white */
+.sf-menu a {
+  display: block;
+  position: relative;
+  color: #ffffff;
+}
 
 /* --- Common Links --- */
 a {
-  color: #4489DD;
-  color:  #a84c1d ;
+  color: #7e6b42;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:visited {
+  font-weight:  bold;
 }
 
 a:hover {

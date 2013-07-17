@@ -1,3 +1,7 @@
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2013.css?mnxgq8 */
+
+/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/tb_events/css/cwcon2013.css?mnxdoe */
+
 /* @override http://www.siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/cwcon2013.css?mncsx3 */
 
 /* @override http://siteslab.org/cwcon/2013/sites/all/themes/tb_events/css/cwcon2013.css?mncsx3 */
@@ -276,12 +280,13 @@ margin-bottom: 10px;
 div.view.view-twitter-attach a {
 	color: #a74c1d;
 }
-/* turn the main wrapper brown */
+/* turn the main wrapper brown 
 
 #main-wrapper > .container {
 	padding: 10px 0 10px 10px;
   background-color: #3b2703;
 }
+*/
 
 /* wrap the menu bar in cwcon 2013 color and do the same to the page title*/
 
@@ -290,14 +295,14 @@ div.view.view-twitter-attach a {
   width: 100%;
  
 }
-
+/*
 #page-title {
 	
 background-color: #dbc79e; 
 font-size: 24px;
 margin: .5em 0 1em;
 padding: 10px 15px;
-}
+}*/
 /* superfish menu 1 test. leaving this out for now but the superfish upgrade will break our theming of the superfish menu
 
 #superfish-1 a {

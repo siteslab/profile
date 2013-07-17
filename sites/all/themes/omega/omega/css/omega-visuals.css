@@ -1,5 +1,3 @@
-/* @override http://siteslab.org/cwcon/2013/themes/omega/omega/css/omega-visuals.css?maixqw */
-
 /* Pagers Positioning */
 .item-list .pager {
   padding:0;
@@ -234,5 +232,5 @@ td ul.links {
 .tips,
 .description {
   font-size: 10px;
-  color: #fff;
+  color: #6a6a6a;
 }
