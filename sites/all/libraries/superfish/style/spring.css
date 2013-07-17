@@ -1,3 +1,5 @@
+/* @override http://siteslab.org/cwcon/2014stage/sites/all/libraries/superfish/style/spring.css?mq2tj6 */
+
 .sf-menu.sf-style-spring {
   float: left;
   margin-bottom: 1em;
@@ -10,7 +12,7 @@
   padding-left: 0;
 }
 .sf-menu.sf-style-spring a {
-  border: 1px solid #ffffff;
+  border-left: 1px solid #5c7c35;
   color: #37731f;
   padding: 0.75em 1em;
 }

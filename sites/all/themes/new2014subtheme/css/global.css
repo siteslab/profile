@@ -1,6 +1,12 @@
 /* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq2tj6 */
 
-/* @override http://localhost/2014/sites/all/themes/new2014subtheme/css/global.css?mq2tj6 */
+/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq2tj6 */
+
+/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq2tj6 */
+
+/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq2tj6 */
+
+
 
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
@@ -12,9 +18,46 @@
 	brown is #7e6b42
 	light green  #5c7c35
 	medium green is #3a624c
-	dark green is #314c47
+	dark green is #2e4424
 
 */
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.05em;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+label, h2.block-title {
+	color: #f7f7f7;
+}
+
+a:link {
+	color: #a19734;
+}
+ 
+ .region-content-inner {
+	
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#zone-content, #zone-menu {
+	background-color: #2e4424;
+	
+}
+
+#zone-menu {
+ padding-top: 10px;
+}
+
+#region-menu {
+	background: #5c7c35;
+}
+
+.breadcrumb {
+	display:none;
+}
 
 body {
 	/* background-color: #e3d7b3;  */
@@ -26,12 +69,16 @@ img#logo {
 	padding-bottom: 1%;
 	
 }
+
+
+
 /*styling the images to fit within their respective containers when viewed on different devices */
 
 img {
   vertical-align: bottom;
   height: auto;
-  width: 100%;
+  width: 95%;
+  max-width: 95%;
 }
 
 /* resize the user pictures to remain smaller than the regular image sizing */
@@ -40,42 +87,32 @@ div.user-picture {
 	width: 50%;
 }
 
+.block {
+	border-bottom: 1px solid #eaebea;
+}
 
 /* tell the twitter widget to play nicely when the window is resized  */
 
 iframe#twitter-widget-0 {
-	width: 85%;
+	max-width: 85%;
 }
 
-.region-sidebar-second {
-  background-color: #2e4424;
-  padding: 1%;
-}
+  /* padding: 1%; */
 
 .region-content {
 	background-color: #fff;
-	padding:  2%;
-	border: 12px solid #2e4424;
 }
 
-.sidebar-second-cwcon {
-	background-color: #2e4424
-}
-
-label, h2.block-title {
-	color: #f7f7f7;
-}
-
-a:link {
-	color: #a19734;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.05em;
-  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-}
 
 /* superfish main menu */
+
+.sf-menu.sf-style-spring a.active
+ {
+ 	background-color: #fff;
+	 color: #000;
+	 font-weight: bold;
+	 border: 1px solid #ffffff;
+ }
 
 .sf-menu.sf-style-spring {
   float: left;
@@ -90,10 +127,12 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 .sf-menu.sf-style-spring a {
-  border: 1px solid #5c7c35;
+
   color: #fff;
   padding: 1em 1em;
   text-decoration: none;
+  font-weight: bold;
+
 }
 .sf-menu.sf-style-spring a.sf-with-ul {
   padding-right: 2.25em;
@@ -127,33 +166,22 @@ h1, h2, h3, h4, h5, h6 {
 .sf-menu.sf-style-spring li.sfHover,
 .sf-menu.sf-style-spring a:focus,
 .sf-menu.sf-style-spring a:hover,
+.sf-menu.sf-style-spring a:active,
 .sf-menu.sf-style-spring.sf-navbar li li {
   background: #7e6b42;
+ 
 }
 
-.sf-menu.sf-style-spring a:active {
-	background-color: #fff;
-	
-}
-
-.sf-menu.sf-style-spring li.active a {
-	background-color: #fff;
-	color: #000;
-}
-
-/* wrap the menu bar in cwcon 2013 color and do the same to the page title*/
+/* wrap the menu bar in cwcon 2014 color and do the same to the page title*/
 
 #page-title {
 	
-background-color: #5c7c35; 
-font-size: 24px;
-
+background-color: #5c7c35;
 margin: .5em 0 1em;
 padding: 10px 15px;
 color: #ffffff;
+font: 28px "Lucida Grande", Lucida, Verdana, sans-serif;
 }
-
-
 
 /* Online conference slideshow on front page */
 
@@ -359,32 +387,6 @@ padding-bottom: .5em;
 {
 font-weight: bold;
 padding-bottom: .5em;
-}
-/*Style the sidebar menu for cwcon 2013 so that the cool icons show up */
-
-.block ul.menu li.menu-icon-1 a {
-  background: url(../images/compass.png) no-repeat 10px 15px;
-  padding-left: 50px;
-}
-
-.block ul.menu li.menu-icon-2 a {
-  background: url(../images/key.png) no-repeat 11px 15px;
-  padding-left: 50px;
-}
-
-.block ul.menu li.menu-icon-3 a {
-  background: url(../images/gearicon2.png) no-repeat 10px 15px;
-  padding-left: 50px;
-}
-
-.block ul.menu li.menu-icon-4 a {
-  background: url(../images/icon-1.png) no-repeat 10px 10px;
-  padding-left: 50px;
-}
-
-.block ul.menu li.menu-icon-5 a {
-  background: url(../images/airship2.png) no-repeat 10px 15px;
-  padding-left: 50px;
 }
 
 /* twitter view for session nodes*/
