@@ -1,17 +1,6 @@
-/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mqd4se */
-
-/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mqd4se */
-
-/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq8tuq */
-
-/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq8tuq */
-
-/* @override http://www.siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq8tuq */
-
-/* @override http://siteslab.org/cwcon/2014stage/sites/all/themes/new2014subtheme/css/global.css?mq8pmk */
 
 
-/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This file holds styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
 
 
@@ -240,6 +229,11 @@ div.user-picture, .user-picture {
 
 .region-sidebar-first .block {
 	border-bottom: 1px solid #eaebea;
+}
+/* remove the show weights from the node add proposal form */
+
+form#proposal-node-form #field-presenter-s-add-more-wrapper  a.tabledrag-toggle-weight {
+    display: none;
 }
 
 /* tell the twitter widget to play nicely when the window is resized  */
@@ -527,7 +521,17 @@ a.views-more-link {
 	padding: 10px;
 }
 
-/* styling for the user pages*/
+/*registration page input*/
+
+#user-register-form .field-name-field-last-name, #user-register-form .field-name-field-first-name  {
+	float: none;
+	padding-right: 0em;
+	padding-bottom: 0em;
+	padding-bottom:0em;
+}
+
+/*styling for the user pages*/
+
 
 .field-name-field-first-name  {
 float:  left;
@@ -536,11 +540,16 @@ font-weight: bold;
 padding-bottom: .5em;
 }
 
+
 .field-name-field-last-name
 {
 font-weight: bold;
 padding-bottom: .5em;
 }
+
+
+
+
 
 /* twitter view for session nodes*/
 
