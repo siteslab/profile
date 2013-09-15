@@ -1,3 +1,5 @@
+/* @override http://siteslab.org/cwcon/2014/sites/all/themes/new2014subtheme/css/global.css?mt6lbz */
+
 
 
 /* This file holds styles for the mobile version of your website (mobile first). */
@@ -549,6 +551,31 @@ padding-bottom: .5em;
 
 
 
+/*style the idea hub tweets */
+
+div.view.view-idea-hub-tweets{
+
+background-color: #2b2c2b;
+border-radius: 5px;
+width: 90%;
+padding-left: 10px;
+padding-bottom: 5%;
+padding-top: 5px;
+padding-right: 2%;
+margin-top: 2%;
+margin-left: 2%;
+margin-right: 2%;
+margin-bottom: 10px;
+color: #c5c4bf;
+}
+
+div.view.view-idea-hub-tweets a:link {
+	color: #739a3e;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
 
 
 /* twitter view for session nodes*/
@@ -561,8 +588,6 @@ padding-bottom: .5em;
 	margin-top:  2px;
 	margin-bottom: 2px;
 }
-
-
 
 div.view.view-twitter-attach{
 
