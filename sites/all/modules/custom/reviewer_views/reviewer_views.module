@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Code for the custom reviewers views
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function reviewer_views_menu() {
+
+  $items['user/%user/review'] = array(
+    'title' => 'Pending Reviews',
+    'page callback' => 'reviewer_views_personal_view',
+    'page arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => '_reviewer_views_personal_tab_access',
+    'access arguments' => array(1),
+    'weight' => 2,
+    'file' => 'reviewer_views.pages.inc',
+  );
+  return $items;
+}
+
+/**
+ * Menu access callback for a reviewer's review dashboard.
+ *
+ * @param $account
+ *   The user object of the user whose review is to be viewed.
+ */
+function _reviewer_views_personal_tab_access($account) {
+  global $user;
+
+  // If not a reviewer or not looking at own page
+  if (!in_array('reviewer', $user->roles) || $account->uid != $user->uid) {
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
