@@ -17,9 +17,19 @@ function reviewer_views_menu() {
     'type' => MENU_LOCAL_TASK,
     'access callback' => '_reviewer_views_personal_tab_access',
     'access arguments' => array(1),
+    'weight' => 1,
+    'file' => 'reviewer_views.pages.inc',
+  );
+
+  $items['reviews-dashboard'] = array(
+    'title' => 'Reviews Dashboard',
+    'page callback' => 'reviewer_views_dashboard_view',
+    'type' => MENU_NORMAL_ITEM,
+    'access callback' => '_reviewer_views_dashboard_access',
     'weight' => 2,
     'file' => 'reviewer_views.pages.inc',
   );
+
   return $items;
 }
 
@@ -38,5 +48,23 @@ function _reviewer_views_personal_tab_access($account) {
   }
 
   return TRUE;
+}
+
+/**
+ * Menu access callback for a admin's review dashboard.
+ *
+ * @param $account
+ *   The user object of the user whose review is to be viewed.
+ */
+function _reviewer_views_dashboard_access() {
+  global $user;
+
+  // If an admin or conference organizer
+  $intersection = array_intersect(array('administrator', 'org'), $user->roles);
+  if (!empty($intersection)) {
+    return TRUE;
+  }
+
+  return FALSE;
 }
 
