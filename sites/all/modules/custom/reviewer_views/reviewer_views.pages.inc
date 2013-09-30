@@ -133,7 +133,7 @@ function reviewer_views_dashboard_view() {
         $rows[] = array(
           '',
           l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
-          t('No decision'),
+          t('No recommendation'),
           empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
         );
       }
