@@ -88,15 +88,12 @@ function reviewer_views_dashboard_view() {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'proposal')
     ->propertyCondition('status', 1);
-    //->fieldCondition('field_reviewer', 'uid', $user->uid, '=');
   $result = $query->execute();
 
   if (isset($result['node'])) {
     $proposal_ids = array_keys($result['node']);
     $proposals = entity_load('node', $proposal_ids);
-    foreach ($proposals as $proposal) {
-      $reviewer_proposals[$proposal->nid]['title'] = $proposal->title;
-    }
+
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'review')
@@ -109,16 +106,12 @@ function reviewer_views_dashboard_view() {
       foreach ($reviews as $review) {
         if (isset($review->field_node_reference['und'][0]['nid'])) {
           $reviewed_proposal_id = $review->field_node_reference['und'][0]['nid'];
-          if (in_array($reviewed_proposal_id, array_keys($reviewer_proposals))) { // make sure this review is about a proposal
-            if (isset($review->field_recommendation['und'][0]['value'])) { // HACK
-              // Index of array is node reference field of this review
-              $reviewer_proposals[$reviewed_proposal_id]['decision'] = $review->field_recommendation['und'][0]['value'];
-              $reviewer_proposals[$reviewed_proposal_id]['review_nid'] = $review->nid;
-              $user = user_load($review->uid);
-              $reviewer_proposals[$reviewed_proposal_id]['reviewer_name'] = l(theme('display_name', (array)$user), 'user/' . $user->uid);
+          $user = user_load($review->uid);
 
-            }
-          }
+          $reviews2[$reviewed_proposal_id][$review->nid] = array(
+            'decision' => $review->field_recommendation['und'][0]['value'],
+            'reviewer_name' => l(theme('display_name', (array)$user), 'user/' . $user->uid),
+          );
         }
       }
     }
@@ -126,20 +119,24 @@ function reviewer_views_dashboard_view() {
     $header = array('Reviewer', 'Proposal Title', 'Recommendation', 'Final Decision');
     $rows = array();
     foreach ($proposals as $proposal_id => $proposal_info) {
-      if (isset($reviewer_proposals[$proposal_id])) {
-        $reviewed = TRUE;
-        $decision = $reviewer_proposals[$proposal_id]['decision'];
+      if (isset($reviews2[$proposal_id])) {
+        foreach ($reviews2[$proposal_id] as $review_nid => $review_result) {
+          $rows[] = array(
+            $reviews2[$proposal_id][$review_nid]['reviewer_name'],
+            l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
+            $reviews2[$proposal_id][$review_nid]['decision'] . " " . l(" View or edit this review", 'node/' . $review_nid),
+            empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
+          );
+        }
       }
       else {
-        $decision = "<strong>Not yet reviewed</strong>";
+        $rows[] = array(
+          '',
+          l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
+          t('No decision'),
+          empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
+        );
       }
-
-      $rows[] = array(
-        $reviewer_proposals[$proposal_id]['reviewer_name'],
-        l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
-        $decision . " " . l(" View or edit this review", 'node/' . $reviewer_proposals[$proposal_id]['review_nid']),
-        empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
-      );
     }
 
     $output = theme('table', array('header' => $header, 'rows' => $rows ));
