@@ -266,8 +266,16 @@ function reviewer_peer_reviews_dashboard_view() {
         }
       }
       else {
+        if (!empty($proposal_info->field_peer_reviewer_s_)) {
+          $user = user_load($proposal_info->field_peer_reviewer_s_[LANGUAGE_NONE][0]['uid']);
+          $name = l(theme('display_name', (array)$user), 'user/' . $user->uid);
+        }
+        else {
+          $name = '';
+        }
+
         $rows[] = array(
-          '',
+          $name,
           l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
           t('Incomplete'),
         );
