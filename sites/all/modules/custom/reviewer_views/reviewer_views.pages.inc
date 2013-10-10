@@ -116,7 +116,7 @@ function reviewer_views_dashboard_view() {
       }
     }
 
-    $header = array('Reviewer', 'Proposal Title', 'Recommendation', 'Final Decision');
+    $header = array(t('Reviewer'), t('Proposal Title'), t('Recommendation'), t('Final Decision'));
     $rows = array();
     foreach ($proposals as $proposal_id => $proposal_info) {
       if (isset($reviews2[$proposal_id])) {
