@@ -109,7 +109,7 @@ function _reviewer_views_dashboard_access() {
  * @param $peer_review
  *  peer review entity
  */
-function _peer_review_has_been_reviews($peer_review) {
+function _peer_review_has_been_reviewed($peer_review) {
 
   $fields = array(
     'field_strengths',

@@ -114,7 +114,7 @@ function reviewer_peer_views_personal_view($user) {
       foreach ($reviews as $review) {
         if (isset($review->field_node_reference['und'][0]['nid'])) {
           $reviewed_proposal_id = $review->field_node_reference['und'][0]['nid'];
-          $status = (_peer_review_has_been_reviews($review)) ? t('Complete') : t('Incomplete');
+          $status = (_peer_review_has_been_reviewed($review)) ? t('Complete') : t('Incomplete');
           $reviewer_proposals[$reviewed_proposal_id]['status'] = l($status, 'node/' . $review->nid);
           $reviewer_proposals[$reviewed_proposal_id]['review_nid'] = $review->nid;
 
@@ -246,7 +246,7 @@ function reviewer_peer_reviews_dashboard_view() {
           $user = user_load($review->uid);
 
           $reviews2[$reviewed_proposal_id][$review->nid] = array(
-            'status' => ($review->created <> $review->changed) ? l('Complete', 'node/' . $review->nid) : t('Incomplete'),
+            'status' => (_peer_review_has_been_reviewed($review)) ? l('Complete', 'node/' . $review->nid) : t('Incomplete'),
             'reviewer_name' => l(theme('display_name', (array)$user), 'user/' . $user->uid),
           );
         }
