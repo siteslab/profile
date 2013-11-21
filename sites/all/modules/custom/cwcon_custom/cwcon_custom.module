@@ -33,12 +33,12 @@ function cwcon_custom_field_formatter_settings_summary($field, $instance, $view_
 function cwcon_custom_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
 
-  if ($display['type'] == 'display_name'  && !empty($entity->field_all_presenters[LANGUAGE_NONE])) {
-    foreach ($entity->field_all_presenters[LANGUAGE_NONE] as $user) {
-      $presenter = user_load($user['uid']);
-      $presenters[] = l(theme('display_name', (array)$presenter), 'user/' . $user['uid']);
+  if ($display['type'] == 'display_name'  && !empty($entity->{$field['field_name']}[LANGUAGE_NONE])) {
+    foreach ($entity->{$field['field_name']}[LANGUAGE_NONE] as $user) {
+      $display_user = user_load($user['uid']);
+      $display_users[] = l(theme('display_name', (array)$display_user), 'user/' . $user['uid']);
     }
-    $element[0]['#markup'] = implode($presenters, ', ');
+    $element[0]['#markup'] = implode($display_users, ', ');
   }
 
   return $element;
