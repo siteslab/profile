@@ -21,7 +21,8 @@ function reviewer_views_personal_view($user) {
     $proposal_ids = array_keys($result['node']);
     $proposals = entity_load('node', $proposal_ids);
     foreach ($proposals as $proposal) {
-      $reviewer_proposals[$proposal->nid]['title'] = $proposal->title;
+      $title = $proposal->field_proposal_title_2014[LANGUAGE_NONE][0]['value'];
+      $reviewer_proposals[$proposal->nid]['title'] = $title;
     }
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
