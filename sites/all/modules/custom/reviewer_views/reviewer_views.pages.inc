@@ -170,11 +170,9 @@ function reviewer_views_dashboard_view() {
       foreach ($reviews as $review) {
         if (isset($review->field_node_reference['und'][0]['nid'])) {
           $reviewed_proposal_id = $review->field_node_reference['und'][0]['nid'];
-          $user = user_load($review->uid);
-
           $reviews2[$reviewed_proposal_id][$review->nid] = array(
             'decision' => $review->field_recommendation['und'][0]['value'],
-            'reviewer_name' => l(theme('display_name', (array)$user), 'user/' . $user->uid),
+            'reviewer_uid' => $review->uid,
           );
         }
       }
@@ -182,22 +180,38 @@ function reviewer_views_dashboard_view() {
 
     $header = array(t('Reviewer'), t('Proposal Title'), t('Recommendation'), t('Final Decision'));
     $rows = array();
+    // Below is a (probably) overcomplicated looping to match reviewer UIDs
+    // to the UIDs of reviews that were created for proposals
+    // We add a row for each proposal reviewer regardless of whether
+    // or not she's reviewed yet.
+    // The logic loops through and matches reviews with their rightful
+    // proposals and provides the decision the reviewer made all the while.
     foreach ($proposals as $proposal_id => $proposal_info) {
-      if (isset($reviews2[$proposal_id])) {
-        foreach ($reviews2[$proposal_id] as $review_nid => $review_result) {
-          $rows[] = array(
-            $reviews2[$proposal_id][$review_nid]['reviewer_name'],
-            l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
-            $reviews2[$proposal_id][$review_nid]['decision'] . " " . l(" View or edit this review", 'node/' . $review_nid),
-            empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
-          );
+      foreach ($proposal_info->field_reviewer[LANGUAGE_NONE] as $key => $reviewer) {
+        if (isset($reviews2[$proposal_id])) {
+          foreach ($proposal_info->field_reviewer[LANGUAGE_NONE] as $key2 => $value ) {
+            $decision = t('No recommendation');
+            foreach ($reviews2[$proposal_id] as $review_nid => $review) {
+              if ($review['reviewer_uid'] == $reviewer['uid']) {
+                $decision = $reviews2[$proposal_id][$review_nid]['decision'] . ' ' . l("View or edit this review", 'node/' . $review_nid);
+                unset($reviews2[$proposal_id][$review_nid]);
+                break 2;
+              }
+            }
+          }
         }
-      }
-      else {
+        else {
+          $decision = t("Yet to review");
+        }
+
+        $reviewer_uid = $proposal_info->field_reviewer[LANGUAGE_NONE][$key]['uid'];
+        $user = user_load($reviewer_uid);
+        $reviewer_name = l(theme('display_name', (array)$user), 'user/' . $user->uid);
+
         $rows[] = array(
-          '',
+          $reviewer_name,
           l($proposal_info->field_proposal_title_2014[LANGUAGE_NONE][0]['value'], 'node/' . $proposal_id),
-          t('No recommendation'),
+          $decision,
           empty($proposal_info->field_final_decision) ? "" : $proposal_info->field_final_decision[LANGUAGE_NONE][0]['value'],
         );
       }
