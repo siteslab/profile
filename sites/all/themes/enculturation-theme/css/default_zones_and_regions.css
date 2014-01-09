@@ -1,0 +1,87 @@
+/* This file will hold the main styles for your website. */
+/* This file is a base starter file with the regions and wrappers */
+/* pre-filled for easy identification. This style sheet also assumes */
+/* that the full-width wrappers are enabled for each zone */
+
+#page {
+	}
+
+	#zone-menu-wrapper {
+	
+	}
+		#region-menu {
+
+			}
+		
+	#zone-user-wrapper {
+		}
+			#zone-user {
+				}
+					#region-user-first {
+						}
+					#region-user-second {
+						}
+
+	#zone-branding-wrapper {
+
+		}
+			#zone-branding {
+				}
+				#region-branding {
+					}
+
+	#zone-header-wrapper {
+		}
+		#zone-header {
+			}
+			#region-header-first {
+				}
+			#region-header-second { 
+				}
+
+	#zone-preface-wrapper {
+		}
+		#zone-preface {
+			}
+			#region-preface-first {
+				}
+			#region-preface-second {
+				}
+
+			#region-preface-third {
+				}
+
+		#zone-content {
+			}
+			#breadcrumb {
+				}
+			#messages {
+				}
+			#region-content {
+				}
+			#region-sidebar-first {
+				}
+			#region-sidebar-second {
+				}
+
+		#zone-postscript-wrapper {
+			}
+				#zone-postscript {
+					}
+						#region-postscript-first {
+						}
+						#region-postscript-second {
+						}
+						#region-postscript-third {
+						}
+						#region-postscript-fourth {
+						}
+
+		#zone-footer-wrapper {
+			}
+				#zone-footer {
+					}
+						#region-footer-first {
+							}
+						#region-footer-second {
+							}

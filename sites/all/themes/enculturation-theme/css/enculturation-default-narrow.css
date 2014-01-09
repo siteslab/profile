@@ -1,0 +1,7 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+
+
+  #zone-branding-wrapper {
+    background: url("../header_bg.png") no-repeat;
+    background-size: 100%;
+  }

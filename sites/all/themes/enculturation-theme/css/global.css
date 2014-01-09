@@ -1,0 +1,297 @@
+/* @override http://localhost/2014/sites/all/themes/enculturation-theme/css/global.css?mys04o */
+
+/* This file holds the main styles for Enculturation. */
+/* The rules here are not media-specific and empty rules are included for regions/zones */
+/* that may be included in future theme/design updates. */
+
+body {
+  color: #5A5A5A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  color: #5f676d;
+}
+
+h1 {
+  font-weight: normal;
+  line-height: 1em;
+}
+
+h6.site-slogan {
+  font-style: italic;
+}
+
+
+a, a:link {
+  color: #3d4e75;
+/*  color: #f06400;
+  color: #254694; */
+  text-decoration: none;
+}
+
+p {
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 1.5em;
+}
+
+a:hover, a:visited {
+  color: #17264a;
+/*  color: #d95a00;
+  color: #4FA3F9; */
+  text-decoration: underline;
+}
+
+td {
+  border: 1px solid #5f676d;  
+}
+
+.region {
+  min-height: 0;
+}
+
+.view-authorship .author_info {
+  background-color: #000;
+}
+
+.front .node-readmore {
+  display: none;
+}
+
+
+#page {
+}
+    
+  #zone-user-wrapper {
+  }
+      #zone-user {
+      }
+          #region-user-first {
+          }
+
+
+  #zone-branding-wrapper {
+    padding-bottom: 1em;
+    margin-bottom: .5em;
+    border-bottom: 2px solid #5f676d;
+    text-align: right;
+    text-transform: lowercase;
+    color: #fff;
+    background: url("../header_bg.png") no-repeat;
+    background-size: cover;
+    }
+    
+  #zone-branding-wrapper a {
+    font-family: "Numans", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+    #zone-branding h6 {
+      color: #fff;
+    }
+    #zone-branding h2 {
+      font-size: 4.25em;
+    }
+      #region-branding {
+      }
+
+  #zone-menu-wrapper {
+    text-transform: lowercase;
+    border-bottom: 2px solid #5f676d;
+    padding-bottom: .25em;
+    padding-top: .25em;
+    margin-bottom: 1em;
+    margin-top: -2px;
+  }
+  #zone-menu-wrapper a {
+    color: #5f676d;
+    padding: .3em;
+  }
+    #zone-menu-wrapper a:hover {
+      color: #fff;
+      background-color: #5f676d;
+      text-decoration: none;
+     
+    }
+    #region-menu {
+    }
+    #region-user-second {
+      text-align: right;
+      margin-top: 0;
+      padding-top: 0;
+    }   
+
+    #region-user-second input[type="submit"] {
+      text-shadow: none;
+      border-radius: none;
+      -webkit-border-radius: none;
+    }
+
+  #zone-header-wrapper {
+  }
+    #zone-header {
+    }
+      #region-header-first {
+      }
+      #region-header-second { 
+      }
+
+  #zone-preface-wrapper {
+    }
+    #zone-preface {
+      }
+      #region-preface-first {
+        }
+      #region-preface-second {
+        }
+
+      #region-preface-third {
+        }
+
+    #zone-content {
+      }
+      #breadcrumb {
+        }
+      #messages {
+        }
+      #region-content {
+      }
+        #region-content h2 {
+          font-weight: normal;
+        }
+
+          div.figureleft {
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            border: thin silver solid;
+          }
+
+          div.figureright {
+            float: right;
+            margin: 10px;
+            padding: 10px;
+            border: thin silver solid;
+          }
+                        
+          div.figurecenter {
+            float: center;
+            margin: 10px;
+            padding: 10px;
+            border: thin silver solid;
+          }
+                        
+          div.figurecenter p {
+            text-align: center;
+            font-size: smaller;
+            font-weight: bold;
+            text-indent: 0;
+          }
+
+          div.links {
+            clear: both;
+          }
+
+      #region-sidebar-first, #region-sidebar-second {
+        border-style: dotted;
+        border-left: 1px solid #5f676d;
+        border-right: 1px solid #5f676d;
+        margin-right: 0;
+      }
+      
+      #region-sidebar-first section, #region-sidebar-second section {
+        border-top: 1px solid #5f676d;
+        border-bottom: 1px solid #5f676d;
+        padding-left: .5em;
+        padding-right: .5em;
+      }
+      
+      #region-sidebar-first .new-article-title a {
+        
+      }
+
+      #region-sidebar-first .new-article-author a {
+        font-style: italic;
+        font-size: .9em;
+      }
+      
+      #region-sidebar-first h2, #region-sidebar-second h2 {
+        background-color: #5f676d;
+        font-weight:bold;
+        font-size: 110%;
+        margin-left: -.5em;
+        margin-right: -.5em;
+        padding: .25em 0 .25em .25em;
+        min-width: 100%;
+        color: #fff;
+        text-transform: lowercase;
+      }
+        
+      #region-sidebar-second ul.menu {
+        list-style-type: none;
+        width: 95%;
+      }  
+      
+      #region-sidebar-second ul.menu li.leaf {
+        list-style-type: none;
+        list-style-image: none;
+        text-indent: -2em;
+        margin-left: 2em;
+      }
+        
+        /* This will likely disappear when articles are added */
+        #region-sidebar-first .view-cfp {
+          margin-bottom: 2em;
+        }
+        
+        #region-sidebar-first li {
+          background: none;
+          list-style: none;
+          margin: 0 1em 0 0;
+          padding: 0;
+        }
+        
+        #region-sidebar-first ul {
+          border-bottom: 6px solid #333366;
+          margin-top: .5em;
+          margin-bottom: 1em;
+          padding-bottom: 1.5em;
+        }
+
+        div.view-recent-publications div.views-row, div.view-new-reviews div.views-row {
+          padding-top: .5em;
+          padding-bottom: .5em;
+        }
+
+.view-recent-publications h3 {
+  text-transform: lowercase;
+  font-size: 1.25em;
+  margin-top: .25em;
+  margin-bottom: 0;
+}
+
+    #zone-postscript-wrapper {
+      }
+        #zone-postscript {
+        }
+            #region-postscript-first {
+            }
+            #region-postscript-second {
+            }
+            #region-postscript-third {
+            }
+            #region-postscript-fourth {
+            }
+
+    #zone-footer-wrapper {
+    }
+        #zone-footer {
+          margin-top: 3em;
+          border-top: solid 1px #CCC;
+        }
+            #region-footer-first {
+              padding-top: 1em;
+            }
+            #region-footer-second {
+            }

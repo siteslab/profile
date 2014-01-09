@@ -1,0 +1,231 @@
+/* This file holds the main styles for Enculturation. */
+/* The rules here are not media-specific and empty rules are included for regions/zones */
+/* that may be included in future theme/design updates. */
+
+body {
+color: #5A5A5A;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+font-family: Verdana, Arial, sans-serif;
+}
+
+h1 {
+font-weight: normal;
+line-height: 1em;
+}
+
+
+a, a:link {
+color: #254694;
+text-decoration: none;
+}
+
+a:hover {
+color: #4FA3F9;
+text-decoration: underline;
+}
+
+td {
+border: 1px solid gray;	
+}
+
+.region {
+min-height: 0;
+}
+
+.view-authorship .author_info {
+background-color: #000;
+}
+
+.front .node-readmore {
+	display: none;
+	}
+
+
+#page {
+	}
+	
+	#zone-menu-wrapper {
+		text-align: right;
+	
+		color: #FFF;
+
+	}
+	#zone-menu-wrapper a {
+		color: #FFF;
+	}
+		#region-menu {
+			}
+		
+	#zone-user-wrapper {
+		}
+			#zone-user {
+				}
+					#region-user-first {
+						}
+					#region-user-second {
+						}
+
+	#zone-branding-wrapper {
+	padding-bottom: 0em;
+	margin-bottom: 2em;
+	background-color: #263559;
+	background-image:url('../header-bg.gif');
+	text-align: right;
+		}
+		
+  #zone-branding-wrapper a {
+    color: #fff;
+  }
+			#zone-branding {
+				}
+				#region-branding {
+					}
+
+	#zone-header-wrapper {
+		}
+		#zone-header {
+			}
+			#region-header-first {
+				}
+			#region-header-second { 
+				}
+
+	#zone-preface-wrapper {
+		}
+		#zone-preface {
+			}
+			#region-preface-first {
+				}
+			#region-preface-second {
+				}
+
+			#region-preface-third {
+				}
+
+		#zone-content {
+			}
+			#breadcrumb {
+				}
+			#messages {
+				}
+			#region-content {
+			}
+				#region-content h2 {
+				font-weight: normal;
+				}
+
+                        div.figureleft {
+                          float: left;
+                          margin: 10px;
+                          padding: 10px;
+                          border: thin silver solid;
+                        }
+
+                        div.figureright {
+                          float: right;
+                          margin: 10px;
+                          padding: 10px;
+                          border: thin silver solid;
+                        }
+                        
+                        div.figurecenter {
+                          float: center;
+                          margin: 10px;
+                          padding: 10px;
+                          border: thin silver solid;
+                        }
+                        
+                        div.figurecenter p {
+                        text-align: center;
+                        font-size: smaller;
+                        font-weight: bold;
+                        text-indent: 0;
+                        }
+
+                        div.links {
+                          clear: both;
+                        }
+
+			#region-sidebar-first {
+			border-style: dotted;
+			border-left: 1px solid #CCC;
+			border-right: 1px solid #CCC;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: .5em;
+			padding-right: .5em;
+			}
+			
+				#region-sidebar-first  h2 {
+					background-color:#333366;
+					font-weight:bold;
+					font-size: 110%;
+					margin:0;
+					padding:0.25em;
+					border-width: 1px;
+					border-style: dotted;
+					color: #CCCCFF;
+					text-transform: lowercase;
+				}
+				
+				/* This will likely disappear when articles are added */
+				#region-sidebar-first .view-cfp {
+					margin-bottom: 2em;
+					}
+				
+				#region-sidebar-first li {
+					background: none;
+					list-style: none;
+					margin: 0 1em 0 0;
+					padding: 0;
+				}
+				
+				#region-sidebar-first ul, form{
+				  border-bottom: 6px solid #333366;
+				  margin-top: .5em;
+				  margin-bottom: 1em;
+				  padding-bottom: 1.5em;
+        }
+
+        div.view-recent-publications div.views-row, div.view-new-reviews div.views-row {
+          padding-top: .5em;
+          padding-bottom: .5em;
+				}
+
+.view-recent-publications h3 {
+  text-transform: lowercase;
+  font-size: 1.25em;
+  margin-top: .25em;
+  margin-bottom: 0;
+}
+
+				
+			#region-sidebar-second {
+				}
+
+		#zone-postscript-wrapper {
+			}
+				#zone-postscript {
+					}
+						#region-postscript-first {
+						}
+						#region-postscript-second {
+						}
+						#region-postscript-third {
+						}
+						#region-postscript-fourth {
+						}
+
+		#zone-footer-wrapper {
+			}
+				#zone-footer {
+				margin-top: 3em;
+				border-top: solid 1px #CCC;
+					}
+						#region-footer-first {
+						padding-top: 1em;
+							}
+						#region-footer-second {
+							}

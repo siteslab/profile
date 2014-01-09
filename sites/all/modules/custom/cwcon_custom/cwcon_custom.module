@@ -69,6 +69,7 @@ function theme_display_name($variables) {
 /*
  * Implements hook_theme()
  */
+
 function cwcon_custom_theme(){
   return array(
     'display_name' => array(
@@ -77,6 +78,12 @@ function cwcon_custom_theme(){
   );
 }
 
+/*
+ * @Chris: is this ^ the end of the code that does the formatting for showing first name and last name in views?
+ * if so, I want to break out the rest of the code that follows into a separate module for clarity.
+ * Is that OK? It looks like everything that follows has to do with showing or hiding the link to add materials to session nodes if I'm reading it correctly.
+ * Follow-up question: If I do move everythign that follows into a separate module, will each independent module work or is there code above this line 
+ * that the code below needs in order to work correctly?
 /**
  * Implements hook_preprocess_node().
  */
